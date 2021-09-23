@@ -3,13 +3,16 @@ function fibonacci(num) {
     return num;
   }
 
-  let lastTwo = [0, 1];
+  let lastTwo = [0, 1]; // we know we start w/ these two no matter what
 
+  //the new sum will always be last value - so just need to go one idx before that
   for (let i = 0; i < num - 1; ++i) {
+    // sum is obtained from two vals in array
     const sum = lastTwo[0] + lastTwo[1];
+    // just need to track last value (for new addition) + new sum
     lastTwo = [lastTwo[1], sum];
   }
-
+  // return last value from array
   return lastTwo[1];
 }
 
